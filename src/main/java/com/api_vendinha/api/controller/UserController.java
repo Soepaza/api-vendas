@@ -43,6 +43,6 @@ public class UserController {
             @PathVariable long id,
             @RequestBody UserRequestDto userRequestDto
     ){
-
+        return userService.update(id, userRequestDto);
     }
 }

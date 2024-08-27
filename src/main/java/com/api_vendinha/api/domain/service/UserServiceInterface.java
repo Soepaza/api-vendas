@@ -18,4 +18,6 @@ public interface UserServiceInterface {
      * @return DTO com as informações do usuário salvo, incluindo o ID gerado e outros detalhes.
      */
     UserResponseDto save(UserRequestDto userRequestDto);
+
+    UserResponseDto update(long id, UserRequestDto userRequestDto);
 }

@@ -56,4 +56,18 @@ public class UserServiceImpl implements UserServiceInterface {
         // Retorna o DTO com as informações do usuário salvo.
         return userResponseDto;
     }
+
+    @Override
+    public UserResponseDto update(long id, UserRequestDto userRequestDto) {
+        User userExist = userRepository.findById(id).orElseThrow();
+        userExist.setName(userRequestDto.getName());
+
+        userRepository.save(userExist);
+
+        UserResponseDto userResponseDto = new UserResponseDto();
+        userResponseDto.setId(userExist.getId());
+        userResponseDto.setName(userExist.getName());
+
+        return userResponseDto;
+    }
 }
