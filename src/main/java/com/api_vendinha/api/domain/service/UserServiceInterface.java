@@ -10,7 +10,6 @@ import com.api_vendinha.api.domain.dtos.response.UserResponseDto;
  * especificando os métodos que devem ser fornecidos pelas classes que a implementam.
  */
 public interface UserServiceInterface {
-
     /**
      * Salva um novo usuário ou atualiza um usuário existente.
      *

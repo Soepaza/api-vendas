@@ -47,8 +47,8 @@ public class UserServiceImpl implements UserServiceInterface {
         user.setName(userRequestDto.getName());
         user.setEmail(userRequestDto.getEmail());
         user.setPassword(userRequestDto.getPassword());
-        user.setIsActive(userRequestDto.getIsActive());
-        user.setCpfCnpj(userRequestDto.getCpfCnpj());
+        user.setIs_active(Boolean.TRUE);
+        user.setCpf_cnpj(userRequestDto.getCpf_cnpj());
 
         // Salva o usuário no banco de dados e obtém a entidade persistida com o ID gerado.
         User savedUser = userRepository.save(user);
@@ -59,9 +59,8 @@ public class UserServiceImpl implements UserServiceInterface {
         userResponseDto.setName(savedUser.getName());
         userResponseDto.setEmail(savedUser.getEmail());
         userResponseDto.setPassword(savedUser.getPassword());
-        userResponseDto.setIsActive(savedUser.getIsActive());
-        userResponseDto.setcpf(savedUser.getcpf());
-
+        userResponseDto.setIs_active(savedUser.getIs_active());
+        userResponseDto.setCpf_cnpj(savedUser.getCpf_cnpj());
         // Retorna o DTO com as informações do usuário salvo.
         return userResponseDto;
     }
@@ -70,14 +69,17 @@ public class UserServiceImpl implements UserServiceInterface {
     public UserResponseDto update(long id, UserRequestDto userRequestDto) {
         User userExist = userRepository.findById(id).orElseThrow();
         userExist.setName(userRequestDto.getName());
-
+        userExist.setEmail(userRequestDto.getEmail());
+        userExist.setPassword((userRequestDto.getPassword()));
+        userExist.setCpf_cnpj((userRequestDto.getCpf_cnpj()));
         userRepository.save(userExist);
 
         UserResponseDto userResponseDto = new UserResponseDto();
         userResponseDto.setId(userExist.getId());
         userResponseDto.setName(userExist.getName());
+        userResponseDto.setPassword((userExist.getPassword()));
+        userResponseDto.setCpf_cnpj((userExist.getCpf_cnpj()));
 
         return userResponseDto;
     }
 }
-//teste
