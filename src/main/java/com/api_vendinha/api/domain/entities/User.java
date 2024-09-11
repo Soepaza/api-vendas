@@ -42,8 +42,11 @@ public class User {
     private String password;
 
     @Column(nullable = false)
-    private Boolean is_active;
+    private String cpf;
 
     @Column(nullable = false)
-    private String cpf_cnpj;
+    private String cep;
+
+    @Column
+    private Boolean is_active;
 }

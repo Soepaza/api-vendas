@@ -10,6 +10,7 @@ import com.api_vendinha.api.domain.dtos.response.UserResponseDto;
  * especificando os métodos que devem ser fornecidos pelas classes que a implementam.
  */
 public interface UserServiceInterface {
+
     /**
      * Salva um novo usuário ou atualiza um usuário existente.
      *
@@ -17,6 +18,7 @@ public interface UserServiceInterface {
      * @return DTO com as informações do usuário salvo, incluindo o ID gerado e outros detalhes.
      */
     UserResponseDto save(UserRequestDto userRequestDto);
-
-    UserResponseDto update(long id, UserRequestDto userRequestDto);
+    UserResponseDto update(Long id, UserRequestDto userRequestDto);
+    UserResponseDto getId(Long id);
+    UserResponseDto setActive(long id, UserRequestDto is_active);
 }
