@@ -3,15 +3,22 @@ package com.api_vendinha.api.domain.service;
 import com.api_vendinha.api.Infrastructure.repository.UserRepository;
 import com.api_vendinha.api.domain.dtos.request.UserRequestDto;
 import com.api_vendinha.api.domain.dtos.response.UserResponseDto;
+import com.api_vendinha.api.domain.entities.Produto;
 import com.api_vendinha.api.domain.entities.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import java.util.List;
+import java.util.stream.Collectors;
+import com.api_vendinha.api.infrastructure.repository;
 
 @Service
 public class UserServiceImpl implements UserServiceInterface {
 
     // Repositório para a persistência de dados de usuários.
     private final UserRepository userRepository;
+
+
+    private final ProdutoRepository produtoRepository
 
     /**
      * Construtor para injeção de dependência do UserRepository.
@@ -48,6 +55,18 @@ public class UserServiceImpl implements UserServiceInterface {
         // Salva o usuário no banco de dados e obtém a entidade persistida com o ID gerado.
         User savedUser = userRepository.save(user);
 
+
+        List<Produto> produtos = userRequestDto.getProdutoRequestDto().stream().map(dto -> {
+            Produto produto = new Produto();
+            produto.setUser(savedUser);
+            produto.setQuantidade(dto.getQuantidade());
+            produto.setName(dto.getName());
+            produto.setPreco(dto.getPreco());
+            produto.setIsActive(dto.getIsActive());
+            return produto;
+        }).collect(Collectors.toList());
+
+        produtoRepository.saveAll(produtos);
 
         // Retorna o DTO com as informações do usuário salvo.
         return this.getUserResponseDto(user);

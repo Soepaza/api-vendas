@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 /**
  * Entidade representando um usuário no sistema.
  *
@@ -49,4 +51,8 @@ public class User {
 
     @Column
     private Boolean is_active;
+
+    @OneToMany(mappedBy = "user")
+    private List<Produto> produtos;
+
 }

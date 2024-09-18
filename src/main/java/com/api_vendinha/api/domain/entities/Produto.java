@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
  * Entidade representando um produto no sistema.
  */
 @Entity
-@Table(name = "produto")
+@Table(name = "produtos")
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
@@ -29,5 +29,9 @@ public class Produto {
     private String preco;
 
     @Column
-    private Boolean isActive; // Renomeado para seguir a convenção Java
+    private Boolean isActive;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 }
