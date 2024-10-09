@@ -1,5 +1,6 @@
 package com.api_vendinha.api.domain.service;
 
+import com.api_vendinha.api.Infrastructure.Repository.ProdutoRepository;
 import com.api_vendinha.api.Infrastructure.repository.UserRepository;
 import com.api_vendinha.api.domain.dtos.request.UserRequestDto;
 import com.api_vendinha.api.domain.dtos.response.UserResponseDto;
@@ -9,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
-import com.api_vendinha.api.infrastructure.repository;
 
 @Service
 public class UserServiceImpl implements UserServiceInterface {
@@ -18,7 +18,7 @@ public class UserServiceImpl implements UserServiceInterface {
     private final UserRepository userRepository;
 
 
-    private final ProdutoRepository produtoRepository
+    private final ProdutoRepository produtoRepository;
 
     /**
      * Construtor para injeção de dependência do UserRepository.
@@ -26,8 +26,9 @@ public class UserServiceImpl implements UserServiceInterface {
      * @param userRepository O repositório de usuários a ser injetado.
      */
     @Autowired
-    public UserServiceImpl(com.api_vendinha.api.Infrastructure.repository.UserRepository userRepository) {
+    public UserServiceImpl(com.api_vendinha.api.Infrastructure.repository.UserRepository userRepository, ProdutoRepository produtoRepository) {
         this.userRepository = userRepository;
+        this.produtoRepository = produtoRepository;
     }
 
     /**

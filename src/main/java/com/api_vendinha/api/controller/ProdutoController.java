@@ -20,7 +20,7 @@ public class ProdutoController {
         this.produtoService = produtoService;
     }
 
-    @PostMapping
+    @PostMapping ("/saveproduto")
     public ProdutoResponseDto salvar(@RequestBody ProdutoRequestDto produtoRequestDto) {
         return produtoService.save(produtoRequestDto);
     }

@@ -32,7 +32,7 @@ public class UserController {
      * @param userRequestDto DTO que contém os dados do usuário a ser salvo.
      * @return DTO com as informações do usuário salvo, incluindo o ID gerado.
      */
-    @PostMapping // Define que este método lida com requisições HTTP POST.
+    @PostMapping ("/salvar")
     public UserResponseDto salvar(@RequestBody UserRequestDto userRequestDto) {
         // Chama o serviço para salvar o usuário e retorna a resposta.
         return userService.save(userRequestDto);

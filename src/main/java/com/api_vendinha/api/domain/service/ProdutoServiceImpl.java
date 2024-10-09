@@ -1,9 +1,9 @@
 package com.api_vendinha.api.domain.service;
 
+import com.api_vendinha.api.Infrastructure.Repository.ProdutoRepository;
 import com.api_vendinha.api.domain.dtos.request.ProdutoRequestDto;
 import com.api_vendinha.api.domain.dtos.response.ProdutoResponseDto;
 import com.api_vendinha.api.domain.entities.Produto;
-import com.api_vendinha.api.infrastructure.repository.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

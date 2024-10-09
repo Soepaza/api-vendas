@@ -1,4 +1,4 @@
-package com.api_vendinha.api.infrastructure.repository;
+package com.api_vendinha.api.Infrastructure.Repository;
 
 import com.api_vendinha.api.domain.entities.Produto;
 import org.springframework.data.jpa.repository.JpaRepository;
