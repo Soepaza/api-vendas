@@ -5,7 +5,7 @@ import com.api_vendinha.api.domain.dtos.response.ProdutoResponseDto;
 import com.api_vendinha.api.domain.service.ProdutoServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
+//2as
 /**
  * Controlador REST para gerenciar operações relacionadas aos produtos.
  */
