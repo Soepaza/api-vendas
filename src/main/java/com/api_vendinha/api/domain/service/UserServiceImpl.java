@@ -25,7 +25,6 @@ public class UserServiceImpl implements UserServiceInterface {
      *
      * @param userRepository O repositório de usuários a ser injetado.
      */
-    @Autowired
     public UserServiceImpl(com.api_vendinha.api.Infrastructure.repository.UserRepository userRepository, ProdutoRepository produtoRepository) {
         this.userRepository = userRepository;
         this.produtoRepository = produtoRepository;

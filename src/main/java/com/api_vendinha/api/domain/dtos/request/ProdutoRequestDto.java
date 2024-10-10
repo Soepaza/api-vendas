@@ -15,13 +15,6 @@ public class ProdutoRequestDto {
     private String preco;
     private Boolean isActive; // Atualizado para refletir a convenção Java
 
-    // Se precisar de um método getIs_active, você pode implementá-lo assim:
     public Boolean getIs_active() {
-        return isActive;
-    }
-
-    // No entanto, o método getIsActive() é mais comum e recomendado:
-    public Boolean getIsActive() {
-        return isActive;
-    }
-}
+        return null;
+    }}
