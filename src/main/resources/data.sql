@@ -8,6 +8,9 @@ CREATE TABLE USERS (
     IS_ACTIVE BOOLEAN DEFAULT TRUE
 );
 
+criar 3 tabela para fazer o relacionametno entre o usuario e a lista de produtos dele
+
+
 CREATE TABLE PRODUTOS (
     ID INT AUTO_INCREMENT PRIMARY KEY,
     NAME VARCHAR(255) NOT NULL,
